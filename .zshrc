@@ -26,6 +26,7 @@ user_modules=(
 	'prompt'
 	'etcvars'
 	'colors'
+	'behavior'
 	)
 
 for module in $user_modules; {
