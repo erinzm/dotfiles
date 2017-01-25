@@ -27,6 +27,7 @@ user_modules=(
 	'etcvars'
 	'colors'
 	'behavior'
+	'machine-specific'
 	)
 
 for module in $user_modules; {
