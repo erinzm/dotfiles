@@ -1,5 +1,8 @@
 set nocompatible " turn off tons of old, useless, backwards-compatible stuff
 
+set rtp^=/usr/share/vim/vimfiles " load stuff from the system Vim path (gj, neovim and Arch Linux)
+
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
@@ -14,9 +17,11 @@ Plug 'qpkorr/vim-bufkill'
 
 " color scheme
 Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
 call plug#end()
 
 set history=500 " command history length
@@ -64,8 +69,15 @@ set wrap " line wrapping
 set lbr  " wrap on whitespace instead of last displayable char
 set ai   " autoindent
 
+let g:airline_powerline_fonts = 1
 set laststatus=2 " always show the status line
 
 " color scheme
-let g:rehash256 = 1
-colorscheme molokai
+let g:gruvbox_italic=1
+set bg=dark
+"set termguicolors
+colorscheme gruvbox
+
+let g:polyglot_disabled = ['latex']
+
+
