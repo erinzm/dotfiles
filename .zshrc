@@ -30,8 +30,6 @@ user_modules=(
 	"machine-$(hostname)"
 	)
 
-echo $user_modules
-
 for module in $user_modules; {
 	[[ -e $dot_zsh/$module.zsh ]] && source $dot_zsh/$module.zsh
 }
