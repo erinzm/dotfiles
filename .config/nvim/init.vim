@@ -10,6 +10,7 @@ Plug 'tpope/vim-sensible'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-vinegar'
 
 " util
 Plug 'editorconfig/editorconfig-vim'
@@ -71,6 +72,12 @@ set ai   " autoindent
 
 let g:airline_powerline_fonts = 1
 set laststatus=2 " always show the status line
+
+let g:netrw_liststyle = 3    " make netrw display a tree view
+let g:netrw_banner = 0       " remove the useless directory banner
+let g:netrw_browse_split = 4 " netrw should open files in the last-used window
+let g:netrw_altv = 1
+
 
 " color scheme
 let g:gruvbox_italic=1
