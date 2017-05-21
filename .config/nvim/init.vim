@@ -19,6 +19,7 @@ Plug 'qpkorr/vim-bufkill'
 " color scheme
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
+Plug 'dikiaap/minimalist'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
@@ -71,6 +72,7 @@ set lbr  " wrap on whitespace instead of last displayable char
 set ai   " autoindent
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 set laststatus=2 " always show the status line
 
 let g:netrw_liststyle = 3    " make netrw display a tree view
@@ -80,11 +82,8 @@ let g:netrw_altv = 1
 
 
 " color scheme
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='hard'
-set bg=dark
-"set termguicolors
-colorscheme gruvbox
+let g:airline_theme='minimalist'
+colorscheme minimalist
 
 let g:polyglot_disabled = ['latex']
 
