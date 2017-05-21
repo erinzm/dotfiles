@@ -19,15 +19,15 @@ order += "battery 0"
 order += "tztime local"
 
 volume master {
-	format = "♪: %volume"
-	format_muted = "♪: muted"
+	format = "%volume "
+	format_muted = "muted "
 
 	device = "pulse"
 }
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+        format_up = " (%quality at %essid) %ip"
+        format_down = " down"
 }
 
 battery 0 {
