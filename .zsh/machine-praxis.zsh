@@ -27,7 +27,7 @@ eval $(thefuck --alias)
 export LEDGER_FILE="$HOME/finance/2018.journal"
 
 if [[ $TERM == xterm-termite ]]; then
-	/etc/profile.d/vte.sh
+	. /etc/profile.d/vte.sh
 	__vte_osc7
 	export TERM=rxvt-unicode-256color
 fi
