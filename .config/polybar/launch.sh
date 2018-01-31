@@ -3,9 +3,6 @@
 killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
-#displays="$(xrandr --query | grep -e '\<connected\>' | cut -d' ' -f1)"
-#for display in $displays; do
-#	MONITOR=$display polybar bottom &
-#done
+primary_display="$(xrandr --query | grep -e 'primary' | cut -d' ' -f1)"
+MONITOR=$primary_display polybar top &
 
-polybar top &

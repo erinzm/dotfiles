@@ -14,8 +14,10 @@ monitor = ${env:MONITOR:eDP-1}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = "xos4 Terminess Powerline:size=12;2"
-font-1 = "FontAwesome:size=10;2"
+font-0 = "Fira Mono:size=9;2"
+;font-0 = "xos4 Terminess Powerline:size=12;2"
+font-1 = "Font Awesome 5 Free:style=Solid,size=10;2"
+font-2 = "Font Awesome 5 Brands:style=Regular,size=10;2"
 
 tray-position = right
 
@@ -50,6 +52,10 @@ ws-icon-3 = 9;
 
 [module/volume]
 type = internal/volume
+
+master-soundcard = default
+mixer-master = Master
+
 format-volume = <label-volume> <bar-volume>
 label-volume = " %percentage%% "
 label-volume-foreground = ${root.foreground}
@@ -85,7 +91,7 @@ label-mounted =  %percentage_free%%
 type = internal/cpu
 interval = 1
 format = <label> <ramp-coreload>
-label =  %percentage%%
+label =  %percentage:2%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
@@ -117,6 +123,12 @@ interface = wlp2s0
 
 label-connected =  %essid%
 label-disconnected =  disconnected
+
+ramp-signal-0 =     ░
+ramp-signal-1 =    ░▒
+ramp-signal-2 =   ░▒▓
+ramp-signal-3 =  ░▒▓█
+ramp-signal-4 = ░▒▓█◘
 
 [module/battery]
 type = internal/battery
