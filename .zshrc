@@ -27,6 +27,7 @@ user_modules=(
 	'etcvars'
 	'colors'
 	'behavior'
+	'k'
 	"machine-$(hostname)"
 	)
 
