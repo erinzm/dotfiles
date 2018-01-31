@@ -16,10 +16,14 @@ Plug 'tpope/vim-vinegar'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'qpkorr/vim-bufkill'
 
+" vcs
+Plug 'tpope/vim-fugitive'
+
 " color scheme
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 Plug 'dikiaap/minimalist'
+Plug 'tssm/fairyfloss.vim'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
@@ -29,6 +33,7 @@ call plug#end()
 set history=500 " command history length
 
 set t_Co=256 " let Vim know we're on a 256-color terminal
+"set termguicolors
 
 filetype plugin on
 filetype indent on
@@ -84,6 +89,7 @@ let g:netrw_altv = 1
 " color scheme
 let g:airline_theme='minimalist'
 colorscheme minimalist
+"colorscheme fairyfloss
 
 let g:polyglot_disabled = ['latex']
 
