@@ -21,10 +21,10 @@ font-2 = "Font Awesome 5 Brands:style=Regular,size=10;2"
 
 tray-position = right
 
-module-margin = 1
+module-margin = 1.5
 modules-left = i3
 modules-center = date
-modules-right = volume cpu mem disk-free wireless-network battery
+modules-right = volume cpu mem disk-free vpn wireless-network battery
 
 [module/i3]
 type = internal/i3
@@ -56,8 +56,8 @@ type = internal/volume
 master-soundcard = default
 mixer-master = Master
 
-format-volume = <label-volume> <bar-volume>
-label-volume = " %percentage%% "
+format-volume = <label-volume>
+label-volume = " %percentage%%"
 label-volume-foreground = ${root.foreground}
 label-muted = muted
 
@@ -106,7 +106,7 @@ ramp-coreload-7 = █
 type = internal/memory
 interval = 1
 format = <label> <bar-used>
-label =  %gb_used%/%gb_total%
+label =  %percentage_used%%
 bar-used-indicator =
 bar-used-width = 10
 bar-used-foreground-0 = #55aa55
@@ -162,3 +162,8 @@ label =  %date% │  %time%
 date = %a, %d %b
 time = %H:%M
 interval = 5.0
+
+[module/vpn]
+type = custom/script
+exec = ip l | grep budget-kick > /dev/null && printf "\n" || printf "\n"
+interval = 10
