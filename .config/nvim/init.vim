@@ -6,6 +6,9 @@ set rtp^=/usr/share/vim/vimfiles " load stuff from the system Vim path (gj, neov
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
+" mode
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+
 " ui
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
@@ -75,6 +78,8 @@ set ts=4
 set wrap " line wrapping
 set lbr  " wrap on whitespace instead of last displayable char
 set ai   " autoindent
+
+set inccommand=nosplit " incrementally show the results of substitutions
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
