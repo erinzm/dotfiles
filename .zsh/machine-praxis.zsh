@@ -1,8 +1,7 @@
 typeset -U path
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64:/opt/cuda/extras/CUPTI/lib64:"
 export CUDA_HOME=/opt/cuda
-export PYTHONPATH=$HOME/software/rdkit:$HOME/build/caffe-rc4/python:$PYTHONPATH
+export GUROBI_HOME=/opt/gurobi752/linux64
 
 # RubyGems configuration
 export GEM_HOME=$(ruby -rrubygems -e "puts Gem.user_dir")
