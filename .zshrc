@@ -28,7 +28,6 @@ user_modules=(
 	'colors'
 	'behavior'
 	'term'
-	'k'
 	"machine-$(hostname)"
 	)
 
