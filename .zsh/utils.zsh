@@ -12,5 +12,11 @@ function open_on_github {
 function yt_music {
 	youtube-dl --default-search=ytsearch: \
 		--youtube-skip-dash-manifest \
-		-o - "$*" | mpv --no-video -
+		-o - "$*" | mpv -
 }
+
+function httpless {
+    http --pretty=all --print=hb $@ | less -R;
+}
+
+alias please=sudo
