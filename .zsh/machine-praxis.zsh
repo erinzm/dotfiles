@@ -24,8 +24,6 @@ eval $(dircolors -b "$HOME/.dircolors")
 
 alias steam-wine='optirun wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe'
 
-eval $(thefuck --alias)
-
 export LEDGER_FILE="$HOME/finance/2018.journal"
 
 if [[ $TERM == xterm-termite ]]; then
