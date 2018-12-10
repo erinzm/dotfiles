@@ -38,3 +38,9 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/liam/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/liam/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+
+emulate sh -c 'source /etc/profile.d/nix.sh'
+
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+export CARP_DIR=$HOME/software/carp
