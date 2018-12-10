@@ -10,6 +10,9 @@ path+=(
 	$HOME/.cargo/bin
 	$GEM_HOME/bin
 	$HOME/.config/yarn/global/node_modules/.bin/
+	$HOME/.cabal/bin
+	$HOME/.nimble/bin
+	/opt/flutter/bin
 	$path)
 
 # added by travis gem
