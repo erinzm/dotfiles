@@ -169,3 +169,6 @@ client.background		#ffffff
 # screenshotting
 bindsym $mod+grave exec _maim
 bindsym $mod+Shift+grave exec _maim -s
+
+# insert special characters
+bindsym $mod+i exec $HOME/.bin/special_characters.sh
