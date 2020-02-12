@@ -1,3 +1,4 @@
 #!/bin/sh
 
-maim ~/Pictures/Screenshots/$(date +%Y-%m-%d-%S).png $@
+maim ~/Pictures/Screenshots/$(date +%y-%m-%d-%H:%M:%S).png \
+ $@
