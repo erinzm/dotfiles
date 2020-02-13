@@ -12,7 +12,7 @@
 
   set $run_menu rofi -show run
   set $apprun_menu rofi -show drun
-  set $pass_menu autopass
+  set $pass_menu passmenu
 
 # === basic keybindings
   # start terminal
@@ -30,6 +30,8 @@
 
 # === movement and focus
   floating_modifier $mod
+
+  bindsym $mod+a focus parent
 
   bindsym $mod+$left  focus left
   bindsym $mod+$right focus right
@@ -90,17 +92,17 @@
 # == embiggening and smollening
   mode "resize" {
     bindsym $left  resize shrink width  10 px or 10 ppt
-	bindsym $right resize grow   width  10 px or 10 ppt
-	bindsym $up    resize grow   height 10 px or 10 ppt
-	bindsym $down  resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow   width  10 px or 10 ppt
+    bindsym $up    resize grow   height 10 px or 10 ppt
+    bindsym $down  resize shrink height 10 px or 10 ppt
 
     bindsym Left  resize shrink width  10 px or 10 ppt
-	bindsym Right resize grow   width  10 px or 10 ppt
-	bindsym Up    resize grow   height 10 px or 10 ppt
-	bindsym Down  resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow   width  10 px or 10 ppt
+    bindsym Up    resize grow   height 10 px or 10 ppt
+    bindsym Down  resize shrink height 10 px or 10 ppt
 
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
   }
 
   bindsym $mod+r mode "resize"
@@ -116,34 +118,53 @@
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit shortcut pressed! are you sure you want to exit?' -B 'yes!' 'i3-msg exit'"
 
 # === media and screen keybindings
-    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-	bindsym XF86AudioMicMute exec --no-startup-id thinkpad-mutemic
+  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+  bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+  bindsym XF86AudioMicMute exec --no-startup-id thinkpad-mutemic
 
-    # rotate
-	bindcode 162 exec --no-startup-id thinkpad-rotate cw
-	# flip
-	bindcode 161 exec --no-startup-id thinkpad-rotate flip
+  # rotate
+  bindcode 162 exec --no-startup-id thinkpad-rotate cw
+  # flip
+  bindcode 161 exec --no-startup-id thinkpad-rotate flip
 
+# === screenshots
+  bindsym $mod+grave exec /home/erin/.bin/_maim
+  bindsym $mod+Shift+grave exec /home/erin/.bin/_maim -s
+
+# === input
+  bindsym $mod+i exec /home/erin/software/charpicker/charpicker.sh
+
+# === music
+  bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+  bindsym XF86AudioStop exec --no-startup-id playerctl stop
+  bindsym XF86AudioNext exec --no-startup-id playerctl next
+  bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # === decoration styling
   font pango:scientifica 9
 
+# === autostarts for configuring x11 and providing useful things
+  exec /home/erin/.bin/x11-startup
+  exec nm-applet
+
+# === set/restore wallpaper
+  exec --no-startup-id nitrogen --restore
+
 # === bar(s)
   bar {
-	font pango:scientifica, FontAwesome 9
+    font pango:scientifica, FontAwesome 9
 
-  	status_command /home/erin/bin/i3status-rs ~/.config/i3/status.toml
-	position top
+    status_command /home/erin/bin/i3status-rs ~/.config/i3/status.toml
+    position top
 
     colors {
-        separator #666666
-        background #222222
-        statusline #dddddd
-        focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
-        urgent_workspace #2f343a #900000 #ffffff
-	}
+      separator #666666
+      background #222222
+      statusline #dddddd
+      focused_workspace #0088CC #0088CC #ffffff
+      active_workspace #333333 #333333 #ffffff
+      inactive_workspace #333333 #333333 #888888
+      urgent_workspace #2f343a #900000 #ffffff
+    }
   }
